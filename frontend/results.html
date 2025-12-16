@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulation Results</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <h1>Life Outcome Projection</h1>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <!-- Decision Builder -->
+  <div class="card">
+    <h2>Decision Builder</h2>
+
+    <label>Career Path</label>
+    <select id="career">
+      <option value="ENGINEER">Engineer</option>
+      <option value="ENTREPRENEUR">Entrepreneur</option>
+      <option value="FREELANCER">Freelancer</option>
+      <option value="MANAGER">Manager</option>
+    </select>
+
+    <label>Savings Rate (%)</label>
+    <input id="savings" type="range" min="0" max="60" value="20"
+           oninput="savingsVal.innerText=this.value + '%'">
+    <div id="savingsVal">20%</div>
+
+    <label>Investment Strategy</label>
+    <select id="investment">
+      <option value="CONSERVATIVE">Conservative</option>
+      <option value="BALANCED">Balanced</option>
+      <option value="AGGRESSIVE">Aggressive</option>
+    </select>
+
+    <label>Lifestyle Cost (Monthly)</label>
+    <input id="lifestyle" type="number" value="2500">
+
+    <label>Decision Category</label>
+    <input id="category" placeholder="Career / Finance / Lifestyle">
+
+    <label>Description</label>
+    <input id="description" placeholder="Short decision description">
+
+    <button onclick="applyDecision()">Apply & Re-run</button>
+  </div>
+
+  <!-- Chart -->
+  <div class="card">
+    <div class="controls">
+      <label><input type="checkbox" checked id="toggleWorst"> Worst</label>
+      <label><input type="checkbox" checked id="toggleExpected"> Expected</label>
+      <label><input type="checkbox" checked id="toggleBest"> Best</label>
+      <button id="replay">Replay</button>
+    </div>
+
+    <canvas id="chart" width="900" height="420"></canvas>
+  </div>
+
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Life Outcome Simulator</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>Life Outcome Simulator</h1>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <p>Simulate 10–50 years of your future using Monte Carlo forecasting.</p>
+
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login / Register</button>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

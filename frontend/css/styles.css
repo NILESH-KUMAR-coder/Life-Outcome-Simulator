@@ -1,0 +1,152 @@
+:root {
+  --bg: #0f1220;
+  --bg-gradient: linear-gradient(120deg, #0f1220, #1b1f3b);
+  --card: rgba(255, 255, 255, 0.08);
+  --text: #f5f7ff;
+  --muted: #a0a3c4;
+  --accent: #7c9cff;
+  --accent-strong: #5a7cff;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Light mode override */
+body.light {
+  --bg: #f4f6fb;
+  --bg-gradient: linear-gradient(120deg, #f4f6fb, #e8ecf8);
+  --card: rgba(255, 255, 255, 0.95);
+  --text: #111;
+  --muted: #555;
+  --accent: #5a7cff;
+  --accent-strong: #3f5bff;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* General styles */
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-gradient);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+p.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.controls label {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+/* Input, Select elements */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Focused input and select elements */
+input:focus, select:focus {
+  outline: 2px solid var(--accent);
+  background: rgba(124, 156, 255, 0.2);
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Light mode input and select elements */
+body.light input,
+body.light select {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+/* Dark Mode Select and Option Styles */
+select {
+  background: rgba(255, 255, 255, 0.1); /* Adjust background color for dark mode */
+  color: var(--text); /* Ensure text color is visible */
+}
+
+select option {
+  background: #333; /* Set dark background for the options */
+  color: #f5f7ff; /* Ensure text is readable on dark background */
+}
+
+select option:checked {
+  background-color: var(--accent-strong); /* Highlight selected option */
+  color: white;
+}
+
+/* Light Mode Styles for select and options */
+body.light select {
+  background: #fff; /* Light background */
+}
+
+body.light select option {
+  background: #fff;
+  color: #111; /* Dark text for readability */
+}
+
+body.light select option:checked {
+  background-color: var(--accent-strong);
+  color: white;
+}
+

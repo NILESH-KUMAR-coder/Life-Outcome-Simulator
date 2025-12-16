@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Life Simulator – Scenario Setup</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="topbar" style="display:flex; justify-content:space-between; align-items:center;">
+  <div>
+    <h1>Life Outcome Simulator</h1>
+    <p class="subtitle">Define your assumptions and explore possible futures</p>
+  </div>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+</header>
+
+<main class="container">
+
+  <div class="card scenario-card">
+    <h2>Simulation Parameters</h2>
+
+    <div class="field">
+      <label>Simulation Length</label>
+      <input id="years" type="number" value="30">
+      <span>years</span>
+    </div>
+
+    <div class="field">
+      <label>Risk Tolerance</label>
+      <input id="risk" type="range" min="0" max="1" step="0.05" value="0.5"
+             oninput="riskValue.innerText = this.value">
+      <div class="risk-labels">
+        <span>Conservative</span>
+        <strong id="riskValue">0.5</strong>
+        <span>Aggressive</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Annual Income</label>
+      <input id="income" type="number" value="50000">
+      <span>₹</span>
+    </div>
+
+    <div class="field">
+      <label>Annual Expenses</label>
+      <input id="expenses" type="number" value="30000">
+      <span>₹</span>
+    </div>
+
+    <button class="primary" onclick="start()">
+      Run Simulation →
+    </button>
+
+  </div>
+
+</main>
+
+<script src="js/apiClient.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
